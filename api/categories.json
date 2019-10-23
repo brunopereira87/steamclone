@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "name": "Free to Play"
+    },
+    {
+        "id": 2,
+        "name": "Early Access"
+    },
+    {
+        "id": 3,
+        "name": "Demos"
+    },
+    {
+        "id": 4,
+        "name": "Virtual Reality"
+    }
+]

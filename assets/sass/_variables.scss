@@ -1,0 +1,37 @@
+$container_width: ("desktop": 900px, "mobile": 100%);
+$center: 0 auto;
+$gutter: 32px;
+$micro_space: 5px;
+$smaller_space: 7px;
+$small_space: 10px;
+$bgcolors: ("primary":#0f1418, "secondary": rgba(62, 126, 167, 0.8), "ternary":#5c7e10, "header": #171a21);
+$textcolors: ("primary": #b8b6b4, "titles":#fff, "hover": #fff,"discount": #a4d007);
+$fontsizes: ("small1": 11px, "small2": 12px, "small3": 13px, "normal":14px, "medium": 18px);
+
+@mixin d($size) {
+    @if(size == l) {
+        @media screen and(min-width: 910px){
+            @content;
+        }
+    }
+    @else if(size == m) {
+        @media screen and (max-width:909px){
+            @content;
+        }
+    }
+}
+@mixin bgcolor($color) {
+    background-color: map-get($bgcolors, $color);
+}
+
+@mixin textcolor($color) {
+    color: map-get($textcolors, $color);
+}
+
+@mixin fontsize($size) {
+    font-size: map-get($fontsizes, $size);
+}
+
+@mixin container_width($size) {
+    width: map-get($container_width, $size);
+}

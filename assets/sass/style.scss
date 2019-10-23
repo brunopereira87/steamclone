@@ -1,0 +1,383 @@
+@import 'reset';
+@import 'variables';
+
+/*GERAL*/
+
+.container {
+    margin: $center;
+    @include container_width("desktop");
+    max-width: 100%;
+    padding: 0 2%;
+}
+
+/*HEADER*/
+.header {
+    display: flex;
+    @include bgcolor("header");
+    height: 104px;
+}
+
+.header .logo {
+    width: 176px;
+    height: 44px;
+}
+
+.header a {
+    text-decoration: none;
+    @include textcolor("primary");
+    font-weight: 500;
+}
+
+.header_content {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+.nav_menu {
+    display: flex;
+
+    li {
+        list-style: none;
+        text-transform: uppercase;
+
+        a {
+            font-size: 14px; 
+            line-height: 16px;
+            padding: 0 7px 7px 7px;
+        }
+    }
+
+    .dropdown_menu {
+        @include bgcolor("header");
+        position: absolute;
+        top: 20px;
+        left: 0;
+        padding: 5px 10px;
+
+        li a {
+            @include fontsize("small2");
+            display: block;
+        }
+    }
+}
+
+
+.item_dropdown {
+    position: relative;
+    ul {
+        display: none;
+    }
+    &:hover ul {
+        display: block;
+    }
+}
+.language_list {
+    display: none;
+}
+
+
+.dropdown_menu {
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+.header_side {
+    align-self: flex-start;
+    font-size: 11px;
+    font-weight: 500;
+    @include textcolor("primary");
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 6px;
+}
+
+.header_side a {
+    @include textcolor("primary");
+}
+.header_side .btn_install {
+    @include bgcolor("ternary");
+    background-image: url("../img/btn_installsteam.png");
+    background-repeat: no-repeat;
+    background-position: 10px 5px;
+    display: flex;
+    align-items: center;
+    padding-left: 35px;
+    padding-right: 9px;
+    height: 24px;
+    color: #e5e4dc;
+}
+
+.header a:hover, .header_side span:hover {
+    @include textcolor("hover");
+}
+.header_side span:hover {
+    cursor: pointer;
+}
+
+.header_login, .header_language {
+    padding: 0 6px;
+}
+
+.header_language {
+    border-left: 1px solid #b8b6b4;
+}
+
+/******************
+******MAIN*********
+******************/
+
+.main_content {
+    background-image: url("../img/page_bg.jpg");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    padding: $gutter 0;
+    font-weight: 300;
+}
+
+.store_nav {
+    background: rgba(62, 126, 167, .8);
+    box-shadow: 0 0 3px rgba( 0, 0, 0, 0.4);
+    ul {
+        list-style: none;
+        li {
+            padding: 10px;
+            font-size: map-get($fontsizes, "small3" );
+            border-right: 1px solid rgba(16, 21, 25, .3);
+
+            a {
+                @include textcolor("titles");
+                font-weight: 300;
+                i {
+                    color: #fff;
+                    font-size: 12px;
+                }
+            }
+        }
+        
+        .dropdown_menu {
+            background: linear-gradient( to bottom, #e3eaef 5%, #c7d5e0 95%);
+            position: absolute;
+            top: 35px;
+
+            a {
+                color: #000;
+                font-weight: 400;
+            }
+        }
+    }
+    
+    &>ul {
+        
+        display: flex;
+
+    }
+}
+
+.page_header_title {
+    padding: $gutter 0;
+    @include textcolor("titles");
+    
+    h2 {
+        font-weight: 400;
+        font-size: 48px;
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 18px;
+        color: #9099a1;
+    }
+}
+/*CAROUSEL*/
+.carousel {
+    position: relative;
+}
+.discount, .prices {
+    text-align: center;
+}
+.prices {
+    font-family: Tahoma ,Arial, Helvetica, sans-serif;
+}
+.carousel_content {
+    display: grid;
+    grid-template-columns: 465px 1fr 1fr;
+    grid-template-rows: 133px 133px auto;
+
+    img {
+        height: 100%;
+        object-fit: cover;
+    }
+    
+}
+
+.carousel_large_item {
+    grid-row: span 2;
+}
+.recommendation {
+    grid-column: 1/-1;
+    @include bgcolor("primary");
+    @include textcolor("titles");
+    padding: $small_space $small_space 0 $small_space;
+    display: flex;
+    justify-content: space-between;
+
+    .prices {
+        background: rgba(20,31,44,0.4);
+    }
+    .discount {
+        font-size: 26px; 
+        line-height: 36px;
+    }
+    .discount, .prices {
+        height: 36px;   
+        padding: 0 $micro_space;
+    }
+
+    .discount_price {
+        color: #acdbf5;
+    }
+}
+.recommendation_label{
+    flex-grow: 1;
+    @include fontsize("medium");
+    height: 56px;
+}
+.discount {
+    @include bgcolor("ternary");
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    @include textcolor("discount");
+}
+
+.prices span {
+    display: block;
+    text-align: right;
+}
+.original_price {
+    color: #acdbf5;
+    @include fontsize("small3");
+}
+.original_price.lined {
+    @include fontsize("small1");;
+    color: #626366;
+    text-decoration: line-through;
+}
+
+.discount_price {
+    font-size: 13px;
+}
+
+/***MAIN GAMES******/
+.main_games {
+    margin-top: $small_space;
+    font-family: Arial, Helvetica, sans-serif;
+    img {
+        max-width: 184px;
+        height: 69px;
+        object-fit: cover;
+    }
+}
+
+.main_games_column {
+    margin-top: 75px;
+    .tabs {
+        display: flex;
+        align-items: center;
+        border-bottom: 4px solid #214b6b;
+        li {
+            padding:0 $small_space;
+            line-height: 25px;
+
+            a {
+                color: #4f94bc;
+                @include fontsize("small3");
+            }
+            &.active {
+                background: #214b6b;
+                border-radius: 3px 3px 0 0;
+                a {
+                    @include textcolor("hover");
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
+
+.filtered_advise {
+    margin: $micro_space 0;
+    background: #16212E;
+    color: #c6d4df;
+    @include fontsize("small2");
+    padding: $small_space;
+    font-weight: 400;
+
+    a {
+        color: #66c0f4;
+        text-decoration: underline;
+    }
+}
+
+.game_item {
+    display: grid;
+    grid-template-rows:repeat(3, 1fr);
+    grid-template-columns: 184px 1fr auto auto;
+    grid-template-areas: 
+        "image title discount prices"
+        "image plataform discount prices"
+        "image tags discount prices"
+    ;
+    grid-column-gap: 2%;
+
+    background: rgba( 0, 0, 0, 0.2 );
+    margin-bottom: $micro_space;
+    img {
+        grid-area: image;
+    }
+    .game_title {
+        grid-area: title;
+        color: #c7d5e0;
+        font-weight: 300;
+        font-size: 1rem;
+        line-height: 18px;
+        margin-top: $micro_space;
+
+    }
+    .plataform_icon {
+        grid-area: plataform;
+        color: rgba($color: #fff, $alpha: 0.3);
+        line-height: 20px;
+        font-size: 16px;
+    }
+    .game_tags {
+        grid-area: tags;
+        color: #384959;
+        @include fontsize("small2");
+        font-weight: 400;
+    }
+    .discount {
+        grid-area: discount;
+        align-self: center;
+        padding: 1px 4px;
+        @include fontsize("normal");
+        text-align: center;
+    }
+    .prices {
+        grid-area: prices;
+        align-self: center;
+        margin-right: 15px;
+
+        .discount_price {
+            color: #9099a1;
+        }
+    }
+
+    &:hover {
+        background: rgba( 0, 0, 0, 0.5 );
+    }
+}

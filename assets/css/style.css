@@ -1,0 +1,388 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/*GERAL*/
+.container {
+  margin: 0 auto;
+  width: 900px;
+  max-width: 100%;
+  padding: 0 2%;
+}
+
+/*HEADER*/
+.header {
+  display: flex;
+  background-color: #171a21;
+  height: 104px;
+}
+
+.header .logo {
+  width: 176px;
+  height: 44px;
+}
+
+.header a {
+  text-decoration: none;
+  color: #b8b6b4;
+  font-weight: 500;
+}
+
+.header_content {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+
+.nav_menu {
+  display: flex;
+}
+.nav_menu li {
+  list-style: none;
+  text-transform: uppercase;
+}
+.nav_menu li a {
+  font-size: 14px;
+  line-height: 16px;
+  padding: 0 7px 7px 7px;
+}
+.nav_menu .dropdown_menu {
+  background-color: #171a21;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  padding: 5px 10px;
+}
+.nav_menu .dropdown_menu li a {
+  font-size: 12px;
+  display: block;
+}
+
+.item_dropdown {
+  position: relative;
+}
+.item_dropdown ul {
+  display: none;
+}
+.item_dropdown:hover ul {
+  display: block;
+}
+
+.language_list {
+  display: none;
+}
+
+.dropdown_menu {
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+
+.header_side {
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 500;
+  color: #b8b6b4;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 6px;
+}
+
+.header_side a {
+  color: #b8b6b4;
+}
+
+.header_side .btn_install {
+  background-color: #5c7e10;
+  background-image: url("../img/btn_installsteam.png");
+  background-repeat: no-repeat;
+  background-position: 10px 5px;
+  display: flex;
+  align-items: center;
+  padding-left: 35px;
+  padding-right: 9px;
+  height: 24px;
+  color: #e5e4dc;
+}
+
+.header a:hover, .header_side span:hover {
+  color: #fff;
+}
+
+.header_side span:hover {
+  cursor: pointer;
+}
+
+.header_login, .header_language {
+  padding: 0 6px;
+}
+
+.header_language {
+  border-left: 1px solid #b8b6b4;
+}
+
+/******************
+******MAIN*********
+******************/
+.main_content {
+  background-image: url("../img/page_bg.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  padding: 32px 0;
+  font-weight: 300;
+}
+
+.store_nav {
+  background: rgba(62, 126, 167, 0.8);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+}
+.store_nav ul {
+  list-style: none;
+}
+.store_nav ul li {
+  padding: 10px;
+  font-size: 13px;
+  border-right: 1px solid rgba(16, 21, 25, 0.3);
+}
+.store_nav ul li a {
+  color: #fff;
+  font-weight: 300;
+}
+.store_nav ul li a i {
+  color: #fff;
+  font-size: 12px;
+}
+.store_nav ul .dropdown_menu {
+  background: linear-gradient(to bottom, #e3eaef 5%, #c7d5e0 95%);
+  position: absolute;
+  top: 35px;
+}
+.store_nav ul .dropdown_menu a {
+  color: #000;
+  font-weight: 400;
+}
+.store_nav > ul {
+  display: flex;
+}
+
+.page_header_title {
+  padding: 32px 0;
+  color: #fff;
+}
+.page_header_title h2 {
+  font-weight: 400;
+  font-size: 48px;
+}
+.page_header_title p {
+  font-weight: 400;
+  font-size: 18px;
+  color: #9099a1;
+}
+
+/*CAROUSEL*/
+.carousel {
+  position: relative;
+}
+
+.discount, .prices {
+  text-align: center;
+}
+
+.prices {
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+}
+
+.carousel_content {
+  display: grid;
+  grid-template-columns: 465px 1fr 1fr;
+  grid-template-rows: 133px 133px auto;
+}
+.carousel_content img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel_large_item {
+  grid-row: span 2;
+}
+
+.recommendation {
+  grid-column: 1/-1;
+  background-color: #0f1418;
+  color: #fff;
+  padding: 10px 10px 0 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.recommendation .prices {
+  background: rgba(20, 31, 44, 0.4);
+}
+.recommendation .discount {
+  font-size: 26px;
+  line-height: 36px;
+}
+.recommendation .discount, .recommendation .prices {
+  height: 36px;
+  padding: 0 5px;
+}
+.recommendation .discount_price {
+  color: #acdbf5;
+}
+
+.recommendation_label {
+  flex-grow: 1;
+  font-size: 18px;
+  height: 56px;
+}
+
+.discount {
+  background-color: #5c7e10;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  color: #a4d007;
+}
+
+.prices span {
+  display: block;
+  text-align: right;
+}
+
+.original_price {
+  color: #acdbf5;
+  font-size: 13px;
+}
+
+.original_price.lined {
+  font-size: 11px;
+  color: #626366;
+  text-decoration: line-through;
+}
+
+.discount_price {
+  font-size: 13px;
+}
+
+/***MAIN GAMES******/
+.main_games {
+  margin-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.main_games img {
+  max-width: 184px;
+  height: 69px;
+  object-fit: cover;
+}
+
+.main_games_column {
+  margin-top: 75px;
+}
+.main_games_column .tabs {
+  display: flex;
+  align-items: center;
+  border-bottom: 4px solid #214b6b;
+}
+.main_games_column .tabs li {
+  padding: 0 10px;
+  line-height: 25px;
+}
+.main_games_column .tabs li a {
+  color: #4f94bc;
+  font-size: 13px;
+}
+.main_games_column .tabs li.active {
+  background: #214b6b;
+  border-radius: 3px 3px 0 0;
+}
+.main_games_column .tabs li.active a {
+  color: #fff;
+  font-weight: 400;
+}
+
+.filtered_advise {
+  margin: 5px 0;
+  background: #16212E;
+  color: #c6d4df;
+  font-size: 12px;
+  padding: 10px;
+  font-weight: 400;
+}
+.filtered_advise a {
+  color: #66c0f4;
+  text-decoration: underline;
+}
+
+.game_item {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: 184px 1fr auto auto;
+  grid-template-areas: "image title discount prices" "image plataform discount prices" "image tags discount prices";
+  grid-column-gap: 2%;
+  background: rgba(0, 0, 0, 0.2);
+  margin-bottom: 5px;
+}
+.game_item img {
+  grid-area: image;
+}
+.game_item .game_title {
+  grid-area: title;
+  color: #c7d5e0;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 18px;
+  margin-top: 5px;
+}
+.game_item .plataform_icon {
+  grid-area: plataform;
+  color: rgba(255, 255, 255, 0.3);
+  line-height: 20px;
+  font-size: 16px;
+}
+.game_item .game_tags {
+  grid-area: tags;
+  color: #384959;
+  font-size: 12px;
+  font-weight: 400;
+}
+.game_item .discount {
+  grid-area: discount;
+  align-self: center;
+  padding: 1px 4px;
+  font-size: 14px;
+  text-align: center;
+}
+.game_item .prices {
+  grid-area: prices;
+  align-self: center;
+  margin-right: 15px;
+}
+.game_item .prices .discount_price {
+  color: #9099a1;
+}
+.game_item:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/*# sourceMappingURL=style.css.map */

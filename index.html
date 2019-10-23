@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="/assets/js/vue.js"></script>
+    <title>Steam Clone</title>
+</head>
+<body>
+    
+    <div id="app">
+        <header class="header">
+            <div class="container">
+                <div class="header_content">
+                    <h1 class="logo"><img src="./assets/img/steam_logo.png"></h1>
+                    <nav>
+                        <ul class="nav_menu">
+                            <li class="item_dropdown"><a href="#">Store</a> 
+                                <ul class="dropdown_menu">
+                                    <li><a href="#">Featured</a> </li>
+                                    <li><a href="#">Explore</a> </li>
+                                    <li><a href="#">Curators</a> </li>
+                                    <li><a href="#">Wishlist</a> </li>
+                                    <li><a href="#">News</a> </li>
+                                    <li><a href="#">Stats</a> </li>
+                                </ul>
+                            </li>
+                            <li class="item_dropdown"><a href="#">Community</a>
+                                <ul class="dropdown_menu">
+                                    <li><a href="#">Home</a> </li>
+                                    <li><a href="#">Discussions</a> </li>
+                                    <li><a href="#">Workshop</a> </li>
+                                    <li><a href="#">Market</a> </li>
+                                    <li><a href="#">Broadcast</a> </li>
+                                </ul></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Support</a></li>
+                        </ul>
+                    </nav>
+                    <div class="header_side">
+                        <a href="#" class="btn_install">
+                            Install Steam
+                        </a>
+                        <a href="#" class="header_login">login</a>
+                        <span class="header_language">language</span>
+                        <ul class="language_list">
+                            <li><a href="#">Deutsch</a></li>
+                            <li><a href="#">English</a></li>
+                            <li><a href="#">Français</a></li>
+                            <li><a href="#">Español</a></li>
+                            <li><a href="#">Português</a></li>                
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </header>
+        <main class="main_content">
+            <div class="container">
+                <nav class="store_nav">
+                    <ul>
+                        <li class="item_dropdown"><a href="#">Your Store <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                            <ul class="dropdown_menu">
+                                <li class="li_border_bottom">
+                                    <a href="#">Store Home</a>
+                                </li>
+                                <li><a href="#">Recently Viewed</a></li>
+                                <li><a href="#">Steam Curators</a></li>
+                                <li><a href="#">Recently Updated</a></li>
+                            </ul>
+                        </li>
+                        <li  class="item_dropdown">
+                            <a href="#">Games <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                            <ul class="dropdown_menu">
+                                <li v-for="(category, index) in categories">
+                                    <a href="#">{{category.name}}</a> 
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Your Store</a></li>
+                        <li><a href="#">Your Store</a></li>
+                        <li><a href="#">Your Store</a></li>
+                        <li><a href="#">Your Store</a></li>
+                    </ul>
+                </nav>
+                <div class="page_header_title">
+                    <h2>Games on Steam</h2>
+                    <p>Browse the newest, top selling and discounted PC games on Steam</p>
+                </div>
+                <div class="featured">
+                    <div class="carousel">
+                        <a href="#">
+                            <div class="carousel_content">
+                                <div class="carousel_large_item">
+                                    <img src="./assets/img/carousel/main.jpg" alt="Main Image">
+                                </div>
+                                <div class="carousel_small_item">
+                                    <img src="./assets/img/carousel/small1.jpg" alt="Small Image 1">
+                                </div>
+                                <div class="carousel_small_item">
+                                    <img src="./assets/img/carousel/small2.jpg" alt="Small Image 2">
+                                </div>
+                                <div class="carousel_small_item">
+                                    <img src="./assets/img/carousel/small3.jpg" alt="Small Image 3">
+                                </div>
+                                <div class="carousel_small_item">
+                                    <img src="./assets/img/carousel/small4.jpg" alt="Small Image 4">
+                                </div>
+                            </div><!--carousel_content-->
+                            <div class="recommendation">
+                                <span class="recommendation_label">Recommended because it's on sale</span>
+                                <span class="discount">-60%</span>
+                                <div class="prices">
+                                    <span class="original_price">R$ 37,79</span>
+                                    <span class="discount_price">R$ 18,99</span>
+                                </div>
+                            </div><!--recommendation-->
+                        </a>
+                        
+                    </div><!--carousel-->
+                </div><!--featured-->
+
+                <div class="games_grid">
+                    <div class="main_games_column">
+                        <ul class="tabs">
+                            <li class="active"><a href="#">New and Trending</a></li>
+                            <li><a href="#">Top Selling</a></li>
+                            <li><a href="#">What's being played</a></li>
+                            <li><a href="#">Upcoming</a></li>
+                        </ul>
+                        <p class="filtered_advise">
+                            Results exclude some products based on <a href="#">your preferences</a> 
+                        </p>
+                        <div class="main_games">
+                            <a href="#" class="game_item" v-for="(game, index) in games"
+                                :key="game.name + index">
+                                <img :src="'/assets/img/uploads/'+game.img" :alt="game.name">
+                                <h3 class="game_title">{{game.name}}</h3>
+                                <i class="fa fa-windows plataform_icon" aria-hidden="true"></i>
+                                <p class="game_tags">{{game.tags}}</p>
+                                <span class="discount" v-if="game.discount > 0">{{game.discount}}%</span>
+                                <div class="prices">
+                                    <span class="original_price" :class="{lined: game.discount}">{{game.price | currency}}</span>
+                                    <span class="discount_price" v-if="game.discount > 0">
+                                        {{getDiscountedPrice(game.price, game.discount) 
+                                        | currency}}</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-col">
+                    <div class="daily_deal_container">
+                        <h2>Daily Deal</h2>
+                        <div class="daily_deal_item">
+                            <img src="./assets/img/daily_deal1.jpg" alt="Daily Deal Image">
+                            <div class="discount_block">
+                                <span class="discount">-75%</span>
+                                <div class="prices">
+                                    <span class="original_price">R$ 37,79</span>
+                                    <span class="discount_price">R$ 9,50</span>
+                                </div>
+                                <div class="today_deal">
+                                    <p>Today's Deal</p>
+                                    <p class="time_counter">30:00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="/assets/js/script.js"></script>
+</body>
+</html>

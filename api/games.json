@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "name": "Destiny 2",
+        "price": 0,
+        "tags": "Action, FPS, Free To Play, Multiplayer, Co-Op",
+        "discount": 0,
+        "os": "Windows",
+        "img": "destiny2.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Bloodstained: Ritual of the Night",
+        "price": 75.49,
+        "tags": "Action, Adventure, RPG, Singleplayer, Metroidvania",
+        "discount": 0,
+        "os": "Windows",
+        "img": "bloodstained.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Cuphead",
+        "price": 36.99,
+        "tags": "Action, Adventure, Plataformer, Difficult, Cartoon, Co-Op",
+        "discount": 20,
+        "os": "Windows",
+        "img": "cuphead.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Assassin's Creed® Odyssey",
+        "price": 159.99,
+        "tags": "Action, Adventure, Singleplayer, Stealth, RPG, Open World",
+        "discount": 0,
+        "os": "Windows",
+        "img": "assassins-creed-odyssey.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Megaman 11",
+        "price": 69.99,
+        "tags": "Action, Plataformer, Classic, Sidescroller, 2.5D",
+        "discount": 0,
+        "os": "Windows",
+        "img": "megaman11.jpg"
+    }
+]

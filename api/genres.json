@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "name": "Action"
+    },
+    {
+        "id": 2,
+        "name": "Adventure"
+    },
+    {
+        "id": 3,
+        "name": "Casual"
+    },
+    {
+        "id": 4,
+        "name": "Virtual Reality"
+    },
+    {
+        "id": 5,
+        "name": "Casual"
+    },
+    {
+        "id": 6,
+        "name": "Indie"
+    },
+    {
+        "id": 7,
+        "name": "Massive Multiplayer"
+    },
+    {
+        "id": 8,
+        "name": "Racing"
+    }
+]
